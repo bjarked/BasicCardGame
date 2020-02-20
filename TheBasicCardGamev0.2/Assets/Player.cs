@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
     }
 
     void DrawPhase () {
-        manaPool.IncreaseMaxMana(1);
+        manaPool.IncreaseMaxMana(5);
         manaPool.RefreaseMana();
         manaPool.UpdateText();
     }
