@@ -18,6 +18,7 @@ public class Hand : MonoBehaviour
             newCard.card = card;
             Cards.Add(newCard);
         }
+        PlaceCards ();
     }
     public void PlaceCards () {
         int handsize = Cards.Count;

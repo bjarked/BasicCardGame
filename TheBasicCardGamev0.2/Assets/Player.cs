@@ -14,19 +14,23 @@ public class Player : MonoBehaviour
         manaPool.UpdateText();
         deck.Shuffle();
         hand.AddCards(deck.Draw(5));
-        hand.PlaceCards();
 
         DrawPhase();
     }
 
     void DrawPhase () {
-        manaPool.IncreaseMaxMana(5);
+        manaPool.IncreaseMaxMana(1);
         manaPool.RefreaseMana();
         manaPool.UpdateText();
+        hand.AddCards(deck.Draw(1));
     }
 
     public bool PayMana (int mana) {
         return manaPool.SpendMana(mana);
+    }
+
+    public void EndTurn () {
+        DrawPhase ();
     }
 
     // Update is called once per frame
