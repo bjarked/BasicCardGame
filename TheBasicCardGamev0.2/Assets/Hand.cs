@@ -5,14 +5,16 @@ using UnityEngine;
 public class Hand : MonoBehaviour
 {
     public List<Cardpref> Cards; 
-    public Cardpref cardpref;
+    public GameObject cardpref;
+    public Player player;
     void Start()
     {
         
     }
     public void AddCards (List<Card> cards) {
         foreach(Card card in cards) {
-            Cardpref newCard = Instantiate(cardpref);
+            Cardpref newCard = Instantiate(cardpref).GetComponent<Cardpref>();
+            newCard.hand = this;
             newCard.card = card;
             Cards.Add(newCard);
         }
@@ -24,5 +26,14 @@ public class Hand : MonoBehaviour
             Vector3 newPlacement = new Vector3 (newX,-3.6f,0);
             Cards[i].gameObject.transform.position = newPlacement;
         }
+    }
+    public void PlayCard (GameObject cardObject){
+        Card card = cardObject.GetComponent<Cardpref>().card;
+        if (player.PayMana(card.Cost)){
+            Destroy(cardObject);
+        } else {
+            print("To high cost");
+        }
+        PlaceCards ();
     }
 }

@@ -18,6 +18,7 @@ public class Cardpref : MonoBehaviour
     private SpriteRenderer render;
     public Card card;
     public CARDSATE state;
+    public Hand hand;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,19 +41,16 @@ public class Cardpref : MonoBehaviour
     }
 
     private void OnMouseDown() {
-        
+        hand.PlayCard(this.gameObject);
     }
 
     void OnMouseOver()
     {
-        print("hall");
         render.color = Color.gray;
     }
 
     void OnMouseExit()
     {
-        
-        print("hall");
         render.color = Color.white;
     }
 }

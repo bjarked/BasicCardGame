@@ -25,6 +25,10 @@ public class Player : MonoBehaviour
         manaPool.UpdateText();
     }
 
+    public bool PayMana (int mana) {
+        return manaPool.SpendMana(mana);
+    }
+
     // Update is called once per frame
     void Update()
     {

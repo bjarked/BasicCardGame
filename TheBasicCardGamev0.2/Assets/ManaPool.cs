@@ -17,6 +17,15 @@ public class ManaPool : MonoBehaviour
     public void AddTemporaryMana(int number) {
         Mana += number;
     }
+    public bool SpendMana (int number){
+        if (number <= Mana){
+            Mana -= number;
+            UpdateText ();
+            return true;
+        } else {
+            return false;
+        }
+    }
 
     public void RefreaseMana () {
         Mana = MaxMana;
