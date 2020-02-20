@@ -31,6 +31,8 @@ public class Cardpref : MonoBehaviour
         } else {
             attack.text = "";
             health.text = "";
+            Destroy(attack.gameObject.transform.parent.gameObject);
+            Destroy(health.gameObject.transform.parent.gameObject);
         } 
     }
 

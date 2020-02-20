@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Field : MonoBehaviour
 {
+    public List<CardFieldPref> cards; 
     // Start is called before the first frame update
     void Start()
     {
