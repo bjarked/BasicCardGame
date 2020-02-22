@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using static CursorScripts;
+
 public enum CARDSATE {
     Field,
     Hand,
@@ -49,10 +51,12 @@ public class Cardpref : MonoBehaviour
     void OnMouseOver()
     {
         render.color = Color.gray;
+        FindObjectOfType<CursorScripts>().SetCursor(CURSOR.Pointer);
     }
 
     void OnMouseExit()
     {
         render.color = Color.white;
+        FindObjectOfType<CursorScripts>().SetCursor(CURSOR.Arrow);
     }
 }

@@ -31,6 +31,13 @@ public class Hand : MonoBehaviour
     public void PlayCard (GameObject cardObject){
         Card card = cardObject.GetComponent<Cardpref>().card;
         if (player.PayMana(card.Cost)){
+            switch (card.Cardtype){
+                case CARDTYPE.Creature : {
+                    player.field.AddCards((CardCreature)card);
+                    break;
+                }
+                default : break;
+            }
             Cards.Remove(cardObject.GetComponent<Cardpref>());
             Destroy(cardObject);
         } else {

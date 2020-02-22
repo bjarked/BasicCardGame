@@ -13,5 +13,12 @@ public abstract class CardCreature : Card
 
     public abstract int Health { get; set;}
     public abstract int Damage { get; set;} 
+
+    public override void Played() {
+        Summon ();
+    }
+    public virtual void Summon () {
+
+    }
     
 }

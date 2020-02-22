@@ -634,7 +634,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2536836494699412466}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.8151643, y: -0.88483614, z: 0}
+  m_LocalPosition: {x: 0.8151643, y: -0.88483614, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8585829895231872073}
@@ -715,7 +715,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4848922724460322627}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.79426193, y: -0.88483614, z: 0}
+  m_LocalPosition: {x: -0.79426193, y: -0.88483614, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3990843053485894317}
@@ -782,6 +782,7 @@ GameObject:
   - component: {fileID: 7128806881341812504}
   - component: {fileID: 3239987518854293758}
   - component: {fileID: 267971756503867222}
+  - component: {fileID: 1865627139347908500}
   m_Layer: 0
   m_Name: CardFieldPref
   m_TagString: Untagged
@@ -798,7 +799,7 @@ Transform:
   m_GameObject: {fileID: 6271870496911749363}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children:
   - {fileID: 8886509985215103961}
   - {fileID: 2810940917287408777}
@@ -871,3 +872,21 @@ MonoBehaviour:
   attack: {fileID: 4322002891723958747}
   health: {fileID: 1951102480776835320}
   card: {fileID: 4846803120468005899, guid: 25df941d2f918604fb7fbc10144bf6f3, type: 3}
+  CanAttack: 0
+  render: {fileID: 0}
+--- !u!70 &1865627139347908500
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6271870496911749363}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 2.27, y: 3.16}
+  m_Direction: 0

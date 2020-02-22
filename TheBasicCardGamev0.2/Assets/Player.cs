@@ -5,9 +5,18 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+    public enum PHASE {
+        DrawPhase,
+        MainPhase,
+        PlayPhase,
+        AttackPhase,
+        EndPhase
+    }
     public Deck deck;
     public Hand hand;
     public ManaPool manaPool;
+    public Field field;
+    public PHASE Phase = PHASE.DrawPhase;
     // Start is called before the first frame update
     void Start() //Start
     {
@@ -23,10 +32,14 @@ public class Player : MonoBehaviour
     }
 
     void DrawPhase () {
+        Phase = PHASE.DrawPhase; 
         manaPool.IncreaseMaxMana(1);
         manaPool.RefreaseMana();
         manaPool.UpdateText();
         hand.AddCards(deck.Draw(1));
+        foreach (CardFieldPref card in field.Cards) {
+            card.Untap();
+        }
     }
 
     void EndPhase () {
